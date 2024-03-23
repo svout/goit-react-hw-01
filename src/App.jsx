@@ -1,19 +1,28 @@
-import Profile from './Profile';
-import './App.css'
+import Profile from "./components/Profile/Profile";
+import "./App.css";
 import userData from "./userData.json";
+import friends from "./friends.json"
+import FriendList from "./components/FriendList/FriendList"
+import Transaction from "./components/Transaction/Transaction";
+import transactions from "./transaction.json"
+
 
 const App = () => {
-  return (
-    <>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
-      />
-    </>
-  );
+  return (
+    <>
+      <Profile
+        name={userData.username}
+        tag={userData.tag}
+        location={userData.location}
+        image={userData.avatar}
+        stats={userData.stats}
+      />
+
+      <FriendList friends={friends} />
+
+      <Transaction transactions={transactions} />
+    </>
+  );
 };
 
-export default App
+export default App;
